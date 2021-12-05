@@ -9,8 +9,13 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  
+  let array = arr.forEach((element, i) => {
+    return element + 1;
+  });
+  return array;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -21,8 +26,14 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+ 
+  let array = [];
+  arr.forEach(function (item, i) {
+    array.push(item + "!");
+  });
+  return array;
 };
+​
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,7 +47,7 @@ const allUpperCase = (arr) => {
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
@@ -49,6 +60,9 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 const greeting = (word) => {
   // Solution code here...
 };
+
+
+
 
 const speaker = (words, cb) => {
   // Solution code here...
