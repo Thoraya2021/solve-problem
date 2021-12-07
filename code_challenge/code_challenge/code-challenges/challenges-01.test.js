@@ -44,7 +44,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  let localarry = [];
+  arr.forEach((ele) => {
+    localarry.push(ele.toUpperCase());
+  });
+  return localarry;
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -85,11 +89,21 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
+
+
 };
 
+
+
+
+
+
 const addNumbers = (num, arr, times, cb) => {
-  // Solution code here...
+  for (let i=0;i<num ;i++)
+  {
+    cb()
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,9 +143,15 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
-};
-
+    for(let i = 1; i <= arr; i++) {
+      if(i % 15 === 0) console.log('FizzBuzz');
+      else if(i % 3 === 0) console.log('Fizz');
+      else if(i % 5 === 0) console.log('Buzz');
+      else console.log(i)
+    }
+  }
+   
+  //fizzBuzz()
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
