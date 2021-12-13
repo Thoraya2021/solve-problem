@@ -28,7 +28,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
  
   let array = [];
-  arr.forEach(function (item, i) {
+  arr.forEach ((item)=> {
     array.push(item + "!");
   });
   return array;
@@ -60,16 +60,16 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
-
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase() + "!";
 };
 
-
-
-
 const speaker = (words, cb) => {
-  // Solution code here...
+  let arr = [];
+  words.forEach((element) => {
+    arr.push(cb(element));
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,15 +90,9 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   arr.push(value);
+   };
 
-
-};
-
-
-
-
-
-
+   
 const addNumbers = (num, arr, times, cb) => {
   for (let i=0;i<num ;i++)
   {
@@ -125,8 +119,19 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+
+
+  const inventory= [];
+  availableItems.forEach((element) => {
+    if (element.available == true) 
+    {
+      inventory.push(element.name);
+    }
+  });
+  return inventory;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
