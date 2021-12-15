@@ -22,9 +22,12 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  let result = [];
+  arr.forEach((element) => {
+    result.push(callback(element));
+  });
+  return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -34,9 +37,9 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
+  arr.sort();
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -46,8 +49,10 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  // Solution code here...
+  return arr.sort((num1,num2)=>
+   num1-num2)
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -58,7 +63,8 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort((num1,num2)=>
+  num1-num2).reverse();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,7 +78,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  arr.sort();
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +96,8 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort((name1,name2)=>name2.price - name1.price).reverse();
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +119,7 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  return arr.sort((name1,name2)=>name2.lenth - name1.lenth).reverse();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +131,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+return arr.sort((num1,num2)=>num2.toString().lenth -num1.toString().lenth).reverse();
 };
 
 /*-----------------------------------------------------------------------------------------------
