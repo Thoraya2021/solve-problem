@@ -85,7 +85,6 @@ const wordsToCharList = (arr) => {
     result.push(arr.slice(i, i + 1));
   }
   return result;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,8 +174,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -194,7 +194,9 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters < 0)
+  return str
+  return str.slice(0,-numberOfCharacters)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,7 +207,13 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+  let numbers =str.split(',')
+  for (let i=0 ;i <numbers.length; i++)
+    {
+      total +=parseInt (numbers[i])
+    }
+      return total
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
