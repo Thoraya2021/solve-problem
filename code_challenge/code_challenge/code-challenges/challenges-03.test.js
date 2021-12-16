@@ -109,8 +109,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
-};
+  arr.sort((name1,name2) => name1.toLowerCase() < name2.toLowerCase() ? -1 : 1)
+  return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -131,7 +132,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-return arr.sort((num1,num2)=>num2.toString().lenth -num1.toString().lenth).reverse();
+return arr.sort((num1,num2)=>num2.toString().length -num1.toString().length).reverse();
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -153,7 +154,20 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((name1, name2) => {
+    let names1 = name1.lastName,
+     names2 = name2.lastName;
+
+    if (names1 < names2) {
+      return 1;
+    }
+    if (names1 > names2) {
+      return -1;
+    }
+    return 0;
+  })
+  .reverse();
+
 };
 
 /* ------------------------------------------------------------------------------------------------

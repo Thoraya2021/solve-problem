@@ -8,6 +8,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
+  let newarr=[];
+  for (let i=0; i <arr.length; i++){
+    newarr.push((arr[i] +2))
+}
+return newarr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,7 +23,9 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  if(str.match(/w/)) return true
+  return false
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,8 +41,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
-};
+  if(input.toString().match(/\d/)) return true
+  return false};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -45,7 +52,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  if(input.match(/world/)) return true
+  return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +65,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  return str.match(/\b[A-Z].*?\b/g)||[]
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +74,14 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let arry = []
+  arr.forEach(item=>{
+    let check = item.match(/^[A-Ja-j].*/g)
+    if(check)
+    arry.push(...check)
+  })
+  return array
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,8 +97,11 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
-};
+  if(input.toString().match(/^Oct$|^oct$|^October$|^october$/g)){
+    return true
+  }
+  return false
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -96,7 +114,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = (str) => {
-  // Solution code here...
+  return str.match(/[A-Za-z0-9]+\s/g)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,7 +130,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  return str.replace(/a|A|e|E|i|I|o|O|u|U/g,'_')
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +149,7 @@ const seashells =
 
 const findShells = (str) => {
   // Solution code here...
+  return str.match(/\w*ells\b/g)
 };
 
 /* ------------------------------------------------------------------------------------------------
