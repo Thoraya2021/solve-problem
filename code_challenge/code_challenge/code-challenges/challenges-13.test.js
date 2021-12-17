@@ -19,7 +19,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map (item => item[0])
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+return arr.filter (item => item.match(/:\)/g));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,9 +43,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = (arr) =>{}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -54,10 +53,15 @@ Write a function named onlyOddChars that takes in a string and returns only the 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
-const onlyOddChars = (str) => {
-  // Solution code here...
-};
-
+const onlyOddChars = (str) =>  {
+  return str.split('').filter ((item,i)=>{
+ 
+   if (i%2==1)
+   {
+     return item
+   }
+  }).join('')
+ };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
@@ -65,7 +69,8 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+let arry =arr.map (item => item.match(/:\)/g)?true:false)
+return ! arry.includes(false)
 };
 
 /* ------------------------------------------------------------------------------------------------
