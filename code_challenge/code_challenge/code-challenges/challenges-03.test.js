@@ -181,9 +181,18 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    if (a.lastName > b.lastName) {
+      return 1;
+    } else if (a.lastName == b.lastName) {
+      if (a.firstName == b.firstName) {
+        return a.age - b.age;
+      }
+      return a.firstName > b.firstName ? 1 : -1;
+    }
+    return -1;
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
 
@@ -221,7 +230,15 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  return sortMeetingsByDay(arr).sort((a, b) => {
+    if (a.dayOfWeek == b.dayOfWeek) {
+      if (a.start == b.start) {
+        return (a.end - a.start) - (b.end - b.start);
+      }
+      return a.start - b.start;
+    }
+    return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
