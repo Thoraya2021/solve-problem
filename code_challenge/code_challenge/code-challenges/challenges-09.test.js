@@ -134,9 +134,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
-  
-
+  const array = str.split("");
+  return array.reduce((acc, curr) => {
+    return curr + acc;
+  }, "");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,7 +190,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+ 
+  return arr.reduce((acc, curr) => {
+    if (curr.children) {
+      acc += curr.children.length;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,9 +208,17 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
-};
+  let arry = arr.reduce(
+    (acc, curr) => {
+      acc.sum += curr;
+      acc.count += 1;
+      return acc;
+    },
+    { sum: 0, count: 0 }
 
+  )
+  return arry.sum / arry.count;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 

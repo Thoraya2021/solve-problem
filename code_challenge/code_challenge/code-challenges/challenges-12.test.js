@@ -9,7 +9,12 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, curr) => {
+    if (curr > acc) {
+      acc = curr;
+    }
+    return acc;
+  }, arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +32,15 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let max = 0;
+  matrix.map((ele) => {
+    ele.map((ele) => {
+      if (ele > max) {
+        max = ele;
+      }
+    });
+  });
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,8 +58,15 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let max = 0;
+  matrix.map((elee) => {
+    elee.map((ele) => {
+      return (max += ele);
+    });
+  });
+  return max;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -157,7 +177,11 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if (board[row][col] == "#") {
+    return "hit";
+  } else {
+    return "miss";
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,8 +193,17 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let total = 1;
+  numbers.map((ele) => {
+    let totalele = 1;
+    ele.map((ele) => {
+      totalele = totalele * ele;
+    });
+    total = total * totalele;
+  });
+  return total;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal

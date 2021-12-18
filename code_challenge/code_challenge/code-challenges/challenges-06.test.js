@@ -55,7 +55,7 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-	// Solution code here...
+	
 };
 
 /* ------------------------------------------------------------------------------------------------
