@@ -36,7 +36,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+ if (word.toString().match (/^[A-Za-z]+$/i)&& word.length.toString().match(/^[5-9]$|10/g)) return true
+ return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,8 +49,10 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
-};
+  if(string.toString().match(/[A-Za-z]\d/g)) return true
+  return false
+}; 
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -68,8 +71,10 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  if(email.toString().match(/^([a-zA-Z0-9]+|[a-zA-Z0-9]+.[a-zA-Z0-9]+)@[a-zA-Z]+(.net|.com|.org)$/g)) return true
+  return false
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -93,8 +98,10 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  if(phoneNumber.toString().match(/^(\(\d{3}\)(\s\d{3}-\d{4}|\d{3}\s\d{4})|\d{3}\s(\d{3}-\d{4}|\d{3}\s\d{4})|\d{3}-(\d{7}|\d{3}\s\d{4}|\d{3}-\d{4})|\d{6}-\d{4}|\d{10}|\d{3}\s\d{7})$/g)) return true
+  return false
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
